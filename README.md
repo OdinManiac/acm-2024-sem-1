@@ -6,8 +6,10 @@ This repository is designed to provide students with the necessary resources for
 ## Contents
 
 - Source code: [`src/`](./src/)
+- Main config that defines the main callbacks: [`main.yaml`](./main.yaml)
 - Run the code without scenario: [`run.py`](run.py)
 - Run the code with scenario: [`scenario.py`](scenario.py)
+
 
 ## Getting Started
 

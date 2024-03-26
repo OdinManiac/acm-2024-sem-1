@@ -2,11 +2,7 @@ callbacks:
   - regelum.callback.ScenarioStepLogger
   - regelum.callback.HistoricalDataCallback
 
-disallow_uncommitted%%: False
-
-
-prefix%%: ""
-
+# setting output directory and format
 rehydra:
   sweep:
     dir: ${oc.env:REGELUM_DATA_DIR}/outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}

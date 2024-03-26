@@ -25,4 +25,5 @@ def main(cfg):
     Scenario(policy=policy, simulator=simulator, sampling_time=0.01).run()
 
 
-main()
+if __name__ == "__main__":
+    main()
