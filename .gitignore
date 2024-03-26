@@ -1,3 +1,4 @@
 multirun
 regelum_data
 .python-version
+*__pycache__*

@@ -2,7 +2,6 @@ from src.system import MyThreeWheeledRobot
 import numpy as np
 from regelum.simulator import CasADi
 from regelum import callback
-from regelum.system import ThreeWheeledRobotKinematic
 import regelum as rg
 
 
@@ -11,7 +10,7 @@ def get_action(state):
 
 
 @rg.main(config_name="main")
-def main():
+def main(cfg):
 
     # Define the initial state (initial position of the kinematic point).
     initial_state = np.array([[2.0, 2.0, 2.0]])  # Start at position (2, 2)
@@ -42,8 +41,6 @@ def main():
         state_history
     )  # Convert history to numpy array for plotting.
     times = np.array(times)  # Convert history to numpy array for plotting.
-
-    print(state_history)
 
 
 main()
