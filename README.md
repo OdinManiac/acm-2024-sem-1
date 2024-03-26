@@ -151,3 +151,7 @@ Here are the steps to install WSL 2 first. This is the Linux subsystem for Windo
     pyenv local my-env-name
     pip install -r requirements.txt
     ```
+- Open vscode
+    ```
+    code .
+    ```
