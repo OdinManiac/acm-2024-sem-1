@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ## Setup
 
-## Visual Studio Code
+### Visual Studio Code
 
 [Install vscode](https://code.visualstudio.com/download)
 
@@ -71,4 +71,85 @@ Here are the steps to install WSL 2 first. This is the Linux subsystem for Windo
     ```shell
 	sudo apt update
 	sudo apt upgrade
+    ```
+
+### Prettify your terminal
+
+- install z shell.
+    ```
+	sudo apt install zsh
+	```
+    Read more here: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+
+- install oh-my-zsh.
+    ```
+	sudo apt install curl
+	sudo apt install git
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    ```
+    Read more here: https://ohmyz.sh/	
+
+- install pretty theme for oh-my-zsh.
+    ```
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+	
+	nano ~/.zshrc
+	```
+
+    And set the theme, write in ~/.zshrc:
+    ```
+	ZSH_THEME="powerlevel10k/powerlevel10k"
+	```
+- Reload:
+    ```
+	exec zsh
+	```
+    Answer the questions as you desire.
+
+    Read more here: https://github.com/romkatv/powerlevel10k#installation	
+
+- Install auto-suggestions:
+    ```
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    ```
+- Add the plugin to the list of plugins for Oh My Zsh to load (inside ~/.zshrc):
+    ```
+    plugins=( 
+        # other plugins...
+        zsh-autosuggestions
+    )
+    ```
+
+
+### pyenv
+
+- Install dependencies
+    ```shell
+	sudo apt install build-essential libssl-dev zlib1g-dev \
+	libbz2-dev libreadline-dev libsqlite3-dev curl \
+	libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+    ```
+
+- Install pyenv. They "-k" option is to avoid issues with an antivirus.
+    ```shell
+	curl https://pyenv.run | bash
+	```
+- Sync pyenv with the terminal.
+    ```shell
+	echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+	echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+	echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+	exec zsh
+	```
+
+    Read more here: https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+
+- Install Python 3.11
+    ```
+	pyenv install 3.11
+	```
+
+- Check pyenv versions. Check that Python 3.11 is there.
+    ```
+	pyenv versions
     ```
